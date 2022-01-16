@@ -64,7 +64,7 @@ class App extends Component {
     const { filter } = this.state;
 
     const visibleContacts = this.getVisibleContacts();
-   npm start
+   
     return (
       <>
         <h1 className={s.Title}><b>Phonebook</b></h1>
