@@ -22,7 +22,8 @@ function Contacts ({ contacts, onDeleteContact }) {
 }
 
 Contacts.propTypes = {
-    contacts: PropTypes.array,
+  contacts: PropTypes.array,
+  onDeleteContact: PropTypes.func,
 }
 
 export default Contacts;
