@@ -42,8 +42,8 @@ class App extends Component {
         if(contactName) {
           alert(`${data.name} already in contacts.`);
           return;
-      }
-      
+        }
+        
         return {
           contacts: [contact, ...contacts],
         }
@@ -60,8 +60,7 @@ class App extends Component {
     const { contacts, filter } = this.state;
     const normolizedFilter = filter.toLowerCase();
 
-    contacts.filter(contact => contact.name.toLowerCase().includes(normolizedFilter));
-    return contacts;
+    return contacts.filter(contact => contact.name.toLowerCase().includes(normolizedFilter));
   }
 
   render() {
