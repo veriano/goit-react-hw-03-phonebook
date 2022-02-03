@@ -57,8 +57,8 @@ class App extends Component {
   }
 
   getVisibleContacts = () => {
-    const { contacts, filter } = this.state;
-    const normolizedFilter = filter.toLowerCase();
+    const { contacts } = this.state;
+    const normolizedFilter = this.state.filter.toLowerCase();
 
     return contacts.filter(contact => contact.name.toLowerCase().includes(normolizedFilter));
   }
