@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import s from './App.module.css';
 import ContactForm from './Components/ContactForm';
-import ContactList from './Components/Contacts';
+import ContactList from './Components/ContactsList';
 import Filter from './Components/Filter';
 
 class App extends Component {
@@ -37,12 +37,13 @@ class App extends Component {
       number: data.number,
     }
     this.setState(({ contacts }) => {
-      for (const contact of contacts) {
-        if (contact.name.toLowerCase() === data.name.toLowerCase()) {
+      const contactName = contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase());
+
+        if(contactName) {
           alert(`${data.name} already in contacts.`);
           return;
-        }
-    }
+      }
+      
         return {
           contacts: [contact, ...contacts],
         }
@@ -59,9 +60,8 @@ class App extends Component {
     const { contacts, filter } = this.state;
     const normolizedFilter = filter.toLowerCase();
 
-    contacts.filter(contact => contact.name.toLowerCase());
-    const contactsNames = contacts.includes(normolizedFilter);
-    return contactsNames;
+    contacts.filter(contact => contact.name.toLowerCase().includes(normolizedFilter));
+    return contacts;
   }
 
   render() {
