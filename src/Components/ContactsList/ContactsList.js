@@ -7,13 +7,12 @@ import s from './ContactsList.module.css';
 function ContactsList ({ contacts, onDeleteContact }) {
     return (
      <>
-        <ul className={s.list}>
-        {contacts.map(({id, name, number}) => (
-          <ContactItem key={id}
-            id={id}
-            name={name}
-            number={number}
-            onDelete={onDeleteContact}
+        <ul className={ s.list }>
+        {contacts && contacts.map(({ id, name, number }) => (
+          <ContactItem key={ id }
+            name={ name }
+            number={ number } 
+            onDelete={ onDeleteContact }
           /> 
         ))}
        </ul>
