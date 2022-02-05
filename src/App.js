@@ -90,7 +90,7 @@ class App extends Component {
           contacts={ visibleContacts }
           onDeleteContact={ this.deleteContact } 
         />
-        </>
+      </>
     )
   }
 
