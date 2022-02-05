@@ -36,11 +36,13 @@ class App extends Component {
   }
 
   addContact = data => {
+    const { contacts } = this.state;
     const contact = {
       id: uuidv4(),
       name: data.name,
       number: data.number,
     }
+    if(contacts !== null) {
     this.setState(({ contacts }) => {
       const contactName = contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase());
 
