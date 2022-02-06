@@ -10,6 +10,7 @@ function ContactsList ({ contacts, onDeleteContact }) {
         <ul className={ s.list }>
         {contacts && contacts.map(({ id, name, number }) => (
           <ContactItem key={ id }
+            id={ id }
             name={ name }
             number={ number } 
             onDelete={ onDeleteContact }
